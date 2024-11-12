@@ -60,3 +60,30 @@ VALUES (
     'office.jpg',
     2
 );
+
+## Leitura de dados da tabela "noticias"
+
+SELECT data, titulo FROM noticias;
+
+SELECT * FROM noticias;
+
+
+## Leitura de dados da tabela "usuarios"
+
+SELECT nome, email, tipo FROM usuarios;
+
+SELECT nome, email, tipo FROM usuarios WHERE tipo = 'editor';
+
+## Atualização de dados dos usuários
+
+UPDATE usuarios SET email = 'tiago@gmail.com'
+WHERE id = 1;
+
+## Excluindo dados da tabela "noticias"
+
+DELETE FROM noticias WHERE id = 1;
+
+
+
+
+
