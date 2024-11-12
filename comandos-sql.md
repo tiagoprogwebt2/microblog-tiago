@@ -22,3 +22,41 @@ VALUES ('Didi Mocó', 'didi@msn', '000', 'editor');
 
 INSERT INTO usuarios (nome, email, senha, tipo)
 VALUES ('Naruto', 'naruto@gmail.com', '000', 'editor');
+
+### Inserindo noticias
+
+INSERT INTO noticias (titulo, texto, resumo, imagem, usuario_id)
+VALUES (
+    'Meu pai ganhou na mega-sena',
+    'To rico, tchau pra vcs',
+    'Jogou e ganhou',
+    'premio.jpg',
+    1
+);
+
+INSERT INTO noticias (titulo, texto, resumo, imagem, usuario_id)
+VALUES (
+    'Corinthians classificado para a pré-libertadores',
+    'Ganhamos todos os jogos finais',
+    'Agora vai',
+    'corinthians.png',
+    4
+);
+
+INSERT INTO noticias (titulo, texto, resumo, imagem, usuario_id)
+VALUES (
+    'Inteligência Artificial revolucionou o mundo',
+    'As IAs estão cada vez mais inseridas no nosso dia a dia',
+    'Há opções gratuitas',
+    'ia.jpg',
+    1
+);
+
+INSERT INTO noticias (titulo, texto, resumo, imagem, usuario_id)
+VALUES (
+    'Lançada nossa versão do Office 365',
+    'Agora há suporte nativo ao Copilot',
+    'Tarefas simplificadas...',
+    'office.jpg',
+    2
+);
