@@ -41,12 +41,12 @@ $dadosUsuario = listarUmUsuario($conexao, $id);
 
 
 					<option 
-					<?php if($dadosUsuario['tipo'] === 'editor') { echo 'selected'; } ?>
+					<?php if($dadosUsuario['tipo'] === 'editor') echo 'selected' ?>
 					value="editor">Editor</option>
 					
 
 					<option 
-					<?php if($dadosUsuario['tipo'] === 'admin') { echo 'selected'; } ?>
+					<?php if($dadosUsuario['tipo'] === 'admin') echo 'selected' ?>
 					value="admin">Administrador</option>
 
 
