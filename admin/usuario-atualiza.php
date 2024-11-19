@@ -7,7 +7,29 @@ $id = $_GET['id'];
 
 // Chamamos a função para carregar os dados da pessoa através do id
 $dadosUsuario = listarUmUsuario($conexao, $id);
-//var_dump($dadosUsuario)
+
+// Verificando se o botão do formulário foi acionado
+if( isset($_POST['atualizar']) ){
+	// Pegando os dados dos campos
+	$nome = $_POST['nome'];
+	$email = $_POST['email'];
+	$tipo = $_POST['tipo'];
+
+	/* Se a senha estiver vazia OU for a mesma */
+	if( empty($_POST['senha']) || password_verify($_POST['senha'], $dadosUsuario['senha']) ){
+		// Manter a mesma senha (copiamos a senha do banco para uma variável)
+		$senha = $dadosUsuario['senha'];
+	} else {
+		// Codificar a nova senha digitada no formulário
+		$senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+	}
+
+	// Chamamos a função para o UPDATE no banco
+	atualizarUsuario($conexao, $id, $nome, $email, $senha, $tipo);
+
+	// Redirecionamos para a página com a lista de usuarios
+	header("location:usuarios.php");
+}
 ?>
 
 <div class="row">
