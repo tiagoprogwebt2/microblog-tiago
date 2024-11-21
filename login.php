@@ -17,6 +17,7 @@ if( isset($_POST['entrar']) ){
 	$senha = $_POST['senha'];
 
 	// 1) Buscando no banco de dados o usuário através do e-mail
+	$usuario = buscarUsuario($conexao, $email);
 }
 ?>
 
