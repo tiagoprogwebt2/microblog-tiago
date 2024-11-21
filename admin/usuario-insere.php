@@ -2,6 +2,8 @@
 require "../includes/cabecalho-admin.php";
 require "../includes/funcoes-usuarios.php";
 
+verificarNivel();
+
 // Se o botão inserir do formulário for acionado
 if(isset($_POST['inserir'])){
 	// Capturar os dados digitados
