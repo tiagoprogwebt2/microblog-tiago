@@ -1,5 +1,23 @@
 <?php
+require "includes/funcoes-controle-de-acesso.php";
+require "includes/funcoes-usuarios.php";
 require "includes/cabecalho.php"; 
+
+/* Verificando se o botão entrar foi acionado */
+if( isset($_POST['entrar']) ){
+	
+	// Validando os campos (se estão vazios)
+	if( empty($_POST['email']) || empty($_POST['senha']) ){
+		header("location:login.php?campos_obrigatorios");
+		die();
+	}
+
+	// Capturando e-mail e senha
+	$email = $_POST['email'];
+	$senha = $_POST['senha'];
+
+	// 1) Buscando no banco de dados o usuário através do e-mail
+}
 ?>
 
 <div class="row">
