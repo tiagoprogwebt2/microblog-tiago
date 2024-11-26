@@ -1,6 +1,15 @@
 <?php 
 require "../includes/cabecalho-admin.php";
+require "../includes/funcoes-noticias.php";
+
+// Pegando o id e o tipo do usuário que está logado na sessão
+$idUsuario = $_SESSION['id'];
+$tipoUsuario = $_SESSION['tipo'];
+
+// Chamando a função e pegando o array com a lista de notícias
+$listaDeNoticias = lerNoticias($conexao, $idUsuario, $tipoUsuario);
 ?>
+<pre><?=var_dump($listaDeNoticias)?></pre>
 
 
 <div class="row">
