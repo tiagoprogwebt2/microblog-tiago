@@ -36,8 +36,18 @@ function lerNoticias($conexao, $idUsuario, $tipoUsuario){
 
 
 // Usada em admin/noticia-atualiza.php
-function lerUmaNoticia($conexao){
-	
+function lerUmaNoticia($conexao, $idNoticia, $idUsuario, $tipoUsuario){
+	if($tipoUsuario === 'admin'){
+        // Pode carregar/ver dados de QUALQUER notícia
+        $sql = "SELECT * FROM noticias WHERE id = $idNoticia";
+    } else {
+        // Senão, pode carregar/ver dados SOMENTE DAS SUAS PRÓPRIAS noticias
+        $sql = "SELECT * FROM noticias 
+                WHERE id = $idNoticia AND usuario_id = $idUsuario";
+    }
+
+    $resultado = executarQuery($conexao, $sql);
+    return mysqli_fetch_assoc($resultado);
 }
 
 

@@ -1,6 +1,21 @@
 <?php
 require "../includes/cabecalho-admin.php";
+require "../includes/funcoes-noticias.php";
+
+// Capturando o parâmetro id enviado via URL/LINK dinâmico
+$idNoticia = $_GET['id'];
+
+// Capturando o id do usuário que está logado
+$idUsuario = $_SESSION['id'];
+
+// Capturando o tipo do usuário que está logado
+$tipoUsuario = $_SESSION['tipo'];
+
+// Chamando a função e carregando o array com os dados da notícia
+$dadosDaNoticia = lerUmaNoticia(
+    $conexao, $idNoticia, $idUsuario, $tipoUsuario);
 ?>
+<pre> <?=var_dump($dadosDaNoticia)?> </pre>
 
 
 <div class="row">
