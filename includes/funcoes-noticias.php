@@ -122,7 +122,7 @@ function buscar($conexao, $termoDigitado){
             ORDER BY data DESC";
 
     $resultado = executarQuery($conexao, $sql);
-    return mysqli_fetch_all($resultado);
+    return mysqli_fetch_all($resultado, MYSQLI_ASSOC);
 }
 
 

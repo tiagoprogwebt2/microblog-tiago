@@ -7,7 +7,6 @@ $termoDigitado = $_GET['busca'];
 
 // Carregando os dados da busca no banco de dados pelo termo digitado
 $dadosDaBusca = buscar($conexao, $termoDigitado);
-
 var_dump($dadosDaBusca);
 ?>
 
@@ -19,6 +18,7 @@ var_dump($dadosDaBusca);
     </h2>
     
     <div class="col-12 my-1">
+
         <article class="card">
             <div class="card-body">
                 <h3 class="fs-4 card-title fw-light">Título da notícia...</h3>
@@ -30,6 +30,7 @@ var_dump($dadosDaBusca);
                 <a href="noticia.php" class="btn btn-primary btn-sm">Continuar lendo</a>
             </div>
         </article>
+
     </div>
 
 </div>     
