@@ -109,6 +109,23 @@ function lerNoticiaCompleta($conexao, $idNoticia){
     return mysqli_fetch_assoc($resultado);
 }
 
+function buscar($conexao, $termoDigitado){
+    /* Atenção: usamos o LIKE em vez de igual no WHERE
+    e também o % para ampliar a possibilidade de encontrar
+    o termo digitado no banco de dados.
+    Usamos o LIKE com % para uma pesquisa parcial/não exata. */
+    $sql = "SELECT id, titulo, resumo, data FROM noticias
+            WHERE 
+                titulo LIKE '%$termoDigitado%' OR
+                resumo LIKE '%$termoDigitado%' OR
+                texto LIKE '%$termoDigitado%' 
+            ORDER BY data DESC";
+
+    $resultado = executarQuery($conexao, $sql);
+    return mysqli_fetch_all($resultado);
+}
+
+
 /* *********** */
 
 
